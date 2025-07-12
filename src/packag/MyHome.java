@@ -62,12 +62,12 @@ public class MyHome implements ActionListener {
         frame.setVisible(true);
     }
 
+    @SuppressWarnings("static-access")
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == playListButton) {
             frame.dispose();
-            MyPlayListPage myPlayListPage = new MyPlayListPage();
-            myPlayListPage.main(null);
+          // new MyPlayListPage.main(); // Correctly calls the static main method of MyPlayListPage
         }
     }
 
