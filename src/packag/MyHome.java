@@ -67,7 +67,7 @@ public class MyHome implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == playListButton) {
             frame.dispose();
-          // new MyPlayListPage.main(); // Correctly calls the static main method of MyPlayListPage
+            MyPlayListPage.launchPlaylist(); // Correctly calls the static main method of MyPlayListPage
         }
     }
 

@@ -12,7 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.sound.sampled.AudioFormat;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -46,6 +45,9 @@ public class MyPlayListPage implements ChangeListener, ActionListener {
 
     static JButton randomButton;
     static JButton repeatButton;
+
+
+    
 
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         // This class represents the playlist page of the application.
@@ -218,6 +220,9 @@ public class MyPlayListPage implements ChangeListener, ActionListener {
             }
         });
         timer.start();
+
+        //When the user click on the slider, it will change the position of the music
+       
         sliderPanel.setBounds(80, 230, 320, 30); // Set bounds for the slider panel
         sliderPanel.setLayout(null); // Set layout to null for absolute positioning
         //sliderPanel.setBackground(Color.black);
@@ -285,5 +290,13 @@ public class MyPlayListPage implements ChangeListener, ActionListener {
         float frameRate = format.getFrameRate();
         long seconds = (long) (frames / frameRate);
         return  String.format("%01d:%02d", seconds / 60, seconds % 60);
+    }
+
+    public static void launchPlaylist(){
+        try {
+            main(new String[]{});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
